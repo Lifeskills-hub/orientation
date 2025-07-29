@@ -142,12 +142,18 @@ function startStage(stage, clue) {
 
   // Clear previous file selection when starting new stage
   document.getElementById("media-upload").value = "";
+  // Re-enable Submit Upload button when starting a new stage
+  const submitBtn = document.getElementById('media-upload').nextElementSibling; // Button after file input
+  if (submitBtn) {
+    submitBtn.disabled = false;
+  }
 }
 
 async function uploadToDrive() {
   const overlay = document.getElementById("loading-overlay");
   const fileInput = document.getElementById("media-upload");
   const file = fileInput.files[0];
+  const submitBtn = fileInput.nextElementSibling; // Button after file input
 
   if (!file) {
     alert("Please select a photo or video to upload.");
@@ -197,6 +203,9 @@ async function uploadToDrive() {
         if (completeBtn) {
           completeBtn.style.display = 'inline-block';
           completeBtn.disabled = false; // Enable only after successful upload
+        }
+        if (submitBtn) {
+          submitBtn.disabled = true; // Disable Submit button after success
         }
       } else {
         alert("❌ Upload failed. Please try again.");
@@ -307,4 +316,14 @@ map.on('click', function (e) {
   const point = map.project(e.latlng, 0);
   console.log(`Clicked Pixel Coordinates: x=${Math.round(point.x)}, y=${Math.round(point.y)}`);
   alert(`Pixel Coordinates: x=${Math.round(point.x)}, y=${Math.round(point.y)}`);
+});
+
+// Add event listener to re-enable Submit button when a new file is selected
+document.getElementById('media-upload').addEventListener('change', function() {
+  const submitBtn = this.nextElementSibling;
+  if (submitBtn && !this.files.length) {
+    submitBtn.disabled = true;
+  } else if (submitBtn) {
+    submitBtn.disabled = false;
+  }
 });
