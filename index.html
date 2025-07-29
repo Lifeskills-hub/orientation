@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orientation Game</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <div id="team-form-overlay">
+    <div id="team-form">
+      <h2>Welcome to Lifeskills Orientation</h2>
+      <label for="team-name">Team Name:</label>
+      <input type="text" id="team-name" required>
+      <label for="team-class">Class:</label>
+      <input type="text" id="team-class" required>
+      <button id="start-game-btn">Start Game</button>
+      <div>
+        <strong>Game Essentials:</strong>
+        <ul>
+          <li><strong>Objective:</strong> Find hotspots, complete tasks, verify success.</li>
+          <li>Appoint a leader to use this map.</li>
+          <li>Enter Team Name & Class accurately.</li>
+          <li><strong>Crucial Rule:</strong> <strong>DO NOT REFRESH/RESTART BROWSER!</strong> Losing tab means restarting game.</li>
+          <li>Teamwork, problem-solving, communication required.</li>
+          <li><strong>Verification:</strong> Tasks verified by facilitators at the end.</li>
+          <li><strong>Goal:</strong> Have fun and connect with classmates!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="game-title">
+    <h2>Stage Title</h2>
+  </div>
+  <div id="map"></div>
+  <div id="clue-overlay">
+    <div id="clue-box">
+      <h3 id="clue-title">Stage Title</h3>
+      <p id="clue-text">Clue will appear here</p>
+      <div class="upload-area">
+        <input type="file" id="media-upload" accept="image/*,video/*">
+        <button onclick="uploadToDrive()">Submit Upload</button>
+      </div>
+      <button id="complete-level-btn" onclick="completeStage()">Mark Stage Complete</button>
+      <button id="close-clue-btn" onclick="closeClue()">Close</button>
+    </div>
+  </div>
+
+  <div id="scoreboard">
+    <h3>Scoreboard</h3>
+    <ul id="score-list"></ul>
+  </div>
+
+  <div id="certificate-overlay">
+    <div id="certificate">
+      <h2>Congratulations!</h2>
+      <p>Team <span id="certificate-team"></span> (Class <span id="certificate-class"></span>) has successfully completed all stages of the Lifeskills Orientation Game!</p>
+      <p>Date: <span id="certificate-date"></span></p>
+      <button onclick="closeCertificate()">Close Certificate</button>
+    </div>
+  </div>
+
+  <div id="loading-overlay">
+    <div class="spinner"></div>
+    Uploading file, please wait...
+  </div>
+
+  <button id="restart-btn" onclick="resetGame()">Restart Game</button>
+  <button id="recall-certificate-btn" onclick="showCertificate()" disabled>View Certificate</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

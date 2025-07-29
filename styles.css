@@ -1,0 +1,227 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+#clue-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+#clue-box {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 90%;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+#clue-box h3 {
+  margin-top: 0;
+}
+
+#clue-box button {
+  margin: 5px;
+}
+
+#close-clue-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+}
+
+#scoreboard {
+  margin: 20px;
+  background: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+}
+
+.upload-area {
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #FF0000; /* Bright red to match markers */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #CC0000; /* Darker red on hover */
+}
+
+button:disabled {
+  background: #AAAAAA; /* Greyed-out background */
+  cursor: not-allowed;
+}
+
+.game-title {
+  text-align: center;
+  padding: 10px;
+}
+
+#team-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#team-form {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 90%;
+  width: 400px;
+}
+
+#team-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+#team-form input {
+  width: 80%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+  color: white;
+  font-size: 1.5em;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #FF0000;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#certificate-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#certificate {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+}
+
+#certificate h2 {
+  color: #FF0000;
+  margin-bottom: 15px;
+}
+
+#certificate p {
+  margin: 10px 0;
+}
+
+#certificate span {
+  font-weight: bold;
+}
+
+#restart-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#recall-certificate-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+  #map {
+    height: 50vh;
+  }
+
+  #clue-box, #team-form {
+    width: 85%;
+    font-size: 14px;
+  }
+
+  #clue-box button, #team-form button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  #certificate {
+    width: 85%;
+    font-size: 14px;
+  }
+
+  #restart-btn, #recall-certificate-btn {
+    bottom: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
