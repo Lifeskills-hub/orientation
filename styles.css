@@ -225,3 +225,10 @@ button:disabled {
     font-size: 14px;
   }
 }
+
+/* Game Essentials Styling */
+#team-form div p {
+  text-align: left;
+  margin: 5px 0;
+  padding: 0 10px;
+}
