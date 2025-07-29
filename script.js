@@ -62,9 +62,21 @@ map.fitBounds(bounds);
 
 // Define game locations using VALID pixel coordinates
 const locations = [
-  { x: 1766, y: -866, clue: "📚 Find the place that have unlimited knowledge, Section L32 will be your door, Red and White cover - page 238 is your clue, read the passage, record it and upload for points", stage: 1 },
-  { x: 1630, y: -510, clue: "🕰️ This is the history of the school, take a welfie with it and upload for points", stage: 2 },
+  { x: 1766, y: -866, clue: "📚 Find the place that have unlimited knowledge, Section L32 will be your door, Red and White cover - page 238 is your clue, read the passage, record it and upload for points" },
+  { x: 1630, y: -510, clue: "🕰️ This is the history of the school, take a welfie with it and upload for points" },
+  { x: 1346, y: -510, clue: "Where bellies rumble and trays go clatter, I serve up meals that truly matter. Find the spot with flavours galore, Strike a foodie pose right on the floor!" },
 ];
+
+// Shuffle locations array
+for (let i = locations.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [locations[i], locations[j]] = [locations[j], locations[i]];
+}
+
+// Assign stages dynamically after shuffling
+locations.forEach((loc, index) => {
+  loc.stage = index + 1;
+});
 
 let currentStage = 0;
 let unlockedStage = 1;
