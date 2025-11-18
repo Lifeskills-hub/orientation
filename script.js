@@ -54,7 +54,7 @@ map.fitBounds(bounds);
 
 // ==================== YOUR 23 CUSTOM STAGES ====================
 const locations = [
-  { x: 1546, y: -737, clue: "Look outside for something bright, number four will be on your right!" }, // Blk 4 Level 4 - Outside LFS Staff Room
+  { x: 1546, y: -737, clue: "Look outside for something bright, number four will be on your right!\nThis will be a manned station" }, // Blk 4 Level 4 - Outside LFS Staff Room
   { x: 1760, y: -823, clue: "Inside where books beholds,\n\nWhen youre thirsty, your drinks will be cold.\n\nSee you there! :)" }, // Outside library Blk 3 Lvl 5
   { x: 818 , y: -715, clue: "Where sneakers squeak and basketballs fall,\nHead to the place that holds the ball!" }, // Sports Hall Blk 7 Lvl 2
   { x: 1354, y: -705, clue: "Five holds the five-star secret;\nClimb to the fourth story\nAnd step to the side of SAC where learning meets tech." }, // Beside SAC room Blk 5 lvl 4
