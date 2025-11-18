@@ -54,29 +54,29 @@ map.fitBounds(bounds);
 
 // ==================== YOUR 23 CUSTOM STAGES ====================
 const locations = [
-  { x: 0, y: 0, clue: "Look outside for something bright, number four will be on your right!" }, // Blk 4 Level 4 - Outside LFS Staff Room
-  { x: 0, y: 0, clue: "Inside where books beholds,\n\nWhen youre thirsty, your drinks will be cold.\n\nSee you there! :)" }, // Outside library Blk 3 Lvl 5
-  { x: 0, y: 0, clue: "Where sneakers squeak and basketballs fall,\nHead to the place that holds the ball!" }, // Sports Hall Blk 7 Lvl 2
-  { x: 0, y: 0, clue: "Five holds the five-star secret;\nClimb to the fourth story\nAnd step to the side of SAC where learning meets tech." }, // Beside SAC room Blk 5 lvl 4
-  { x: 0, y: 0, clue: "Block 6, Level 2 is where you roam;\nNext to the sports hall, players make it their home.\nHear the games? See a match in play?\nYou’re right nearby, where are you?" }, // Outside gym
-  { x: 0, y: 0, clue: "Head to Block 1, Level 2,\nWhere visitors queue but none now stay,\nBeside the moving steps on Level 2’s way.\nSee people rising as they pass through,\nFind this empty spot… where are you?" }, // Blk 1 lvl 2 empty space beside customer & visitor center
-  { x: 0, y: 0, clue: "Snacks on the left, sweat on the right,\nHead downstairs, it’s darker than light.\nWhere beats thump and echoes rhyme,\nFind your clue in the place of grind!" }, // Fitness@West (Blk 1 lvl 1)
-  { x: 0, y: 0, clue: "Behind the block where the green fields grow,\nA quiet spot not many know.\nIt’s not far, just change your pace,\nYour clue awaits inside Co-Space!" }, // Co-space
-  { x: 0, y: 0, clue: "Need some help? Go through Block 2 Level 2. See the VIBES sign above you?\nYou're on the right track, we're at 2203!" }, // PULSE (Blk 2 Lvl 2)
-  { x: 0, y: 0, clue: "Enter the lift and you will see, a welcome sign will show you where I'll be.\nOn the fifth level of the second block as you turn to your left,\nThe herb garden at the end of the hall will greet you.\nBut do not be mistaken,\nI am the only door on the right.\nRemember to read the signs!" }, // Black Box
-  { x: 0, y: 0, clue: "Beneath the library, where silence is found,\nOn Level 4, where ideas resound.\nIn Block 3, between Youth Connect and Visume,\nA space where flair and creativity bloom.\nIndoors I remain, with \"flair\" in my name,\nA studio to create, design, and claim fame." }, // Flair studio
-  { x: 0, y: 0, clue: "I’m round and inviting, where people find rest,\nA plant in my center, growing at its best.\nOutside SAC and GAC, I proudly stand,\nOn Level 4, where comfort’s at hand" }, // Circular plant area between Blk 5 and Blk 1
-  { x: 0, y: 0, clue: "I’m where the doors open with a ding,\nBeside the place of drinks and things.\nOn Level Two of Block One’s floor,\nI’m right outside — can’t miss the door!" }, // Blk 1 Level 2 Outside the elevator beside 711
-  { x: 0, y: 0, clue: "Where ink meets page,\nStep beyond, where you are sought.\nThe spot you seek is calm, not loud —\nRight outside, beyond the crowd." }, // Space outside JCS@West
-  { x: 0, y: 0, clue: "Half a dozen steps and you’ll arrive,\nWhere future hosts learn to welcome and drive.\nA lobby’s name with sky in view\nA training ground for hospitality crew." }, // Sky Lobby
-  { x: 0, y: 0, clue: "Around the Piazza above lies a bridge on the fourth level.\nUp the escalator you go and you might find me there." }, // Level 4 walkaway the curve around piazza
-  { x: 0, y: 0, clue: "1. I am located at where imagination are created. Hint: Trains are Too Technological (fictional)\n2. I am located at the section where it is popular in japan. Hint: What is the letter to describe yourself. (Manga)\n3. I am located at the national language of Singapore. Hint: I come at the end of note, page & theme. What letter am I? (Malay)" }, // Library
-  { x: 0, y: 0, clue: "On level four we proudly stand,\nA wall of colors, tech in hand.\nFaces and wires, stories untold\nWhich mural’s magic do we behold" }, // School of Info-Comn and Technology Mural
-  { x: 0, y: 0, clue: "Down at level two they stay,\nHuman forms in a frozen play.\nNo words they speak, yet stories show\nWhat figures stand where breezes blow?" }, // Piazza
-  { x: 0, y: 0, clue: "On level three in Block One’s space,\nA shop for uniforms and pens you’ll trace.\nFrom notes to shirts, they’ve got the best\nWhat place equips all students?" }, // JCS @ West
-  { x: 0, y: 0, clue: "Where hearts race fast and muscles grow,\nOn level two, Block Six, you’ll know.\nA place for power, strength, and vim\nCan you guess?" }, // Gym
-  { x: 0, y: 0, clue: "Near shelves of knowledge, take a rest,\nOn level five, your thirst is blessed.\nSweet pearls dance in every cup\nCan you guess?" }, // Each 'a' Cup
-  { x: 0, y: 0, clue: "Need some help or a friendly guide?\nOn level two, Block Two inside.\nQuestions answered with care so true\nWhat centre waits to welcome you?" }  // Outside customer visitor centre
+  { x: 1546, y: -737, clue: "Look outside for something bright, number four will be on your right!" }, // Blk 4 Level 4 - Outside LFS Staff Room
+  { x: 1760, y: -823, clue: "Inside where books beholds,\n\nWhen youre thirsty, your drinks will be cold.\n\nSee you there! :)" }, // Outside library Blk 3 Lvl 5
+  { x: 818 , y: -715, clue: "Where sneakers squeak and basketballs fall,\nHead to the place that holds the ball!" }, // Sports Hall Blk 7 Lvl 2
+  { x: 1354, y: -705, clue: "Five holds the five-star secret;\nClimb to the fourth story\nAnd step to the side of SAC where learning meets tech." }, // Beside SAC room Blk 5 lvl 4
+  { x: 1066, y: -659, clue: "Block 6, Level 2 is where you roam;\nNext to the sports hall, players make it their home.\nHear the games? See a match in play?\nYou’re right nearby, where are you?" }, // Outside gym
+  { x: 1592, y: -519, clue: "Head to Block 1, Level 2,\nWhere visitors queue but none now stay,\nBeside the moving steps on Level 2’s way.\nSee people rising as they pass through,\nFind this empty spot… where are you?" }, // Blk 1 lvl 2 empty space beside customer & visitor center
+  { x: 1266, y: -479, clue: "Snacks on the left, sweat on the right,\nHead downstairs, it’s darker than light.\nWhere beats thump and echoes rhyme,\nFind your clue in the place of grind!" }, // Fitness@West (Blk 1 lvl 1)
+  { x: 1336, y: -447, clue: "Behind the block where the green fields grow,\nA quiet spot not many know.\nIt’s not far, just change your pace,\nYour clue awaits inside Co-Space!" }, // Co-space
+  { x: 1790, y: -497, clue: "Need some help? Go through Block 2 Level 2. See the VIBES sign above you?\nYou're on the right track, we're at 2203!" }, // PULSE (Blk 2 Lvl 2)
+  { x: 1718, y: -499, clue: "Enter the lift and you will see, a welcome sign will show you where I'll be.\nOn the fifth level of the second block as you turn to your left,\nThe herb garden at the end of the hall will greet you.\nBut do not be mistaken,\nI am the only door on the right.\nRemember to read the signs!" }, // Black Box
+  { x: 1792, y: -903, clue: "Beneath the library, where silence is found,\nOn Level 4, where ideas resound.\nIn Block 3, between Youth Connect and Visume,\nA space where flair and creativity bloom.\nIndoors I remain, with \"flair\" in my name,\nA studio to create, design, and claim fame." }, // Flair studio
+  { x: 1402, y: -615, clue: "I’m round and inviting, where people find rest,\nA plant in my center, growing at its best.\nOutside SAC and GAC, I proudly stand,\nOn Level 4, where comfort’s at hand" }, // Circular plant area between Blk 5 and Blk 1
+  { x: 1444, y: -517, clue: "I’m where the doors open with a ding,\nBeside the place of drinks and things.\nOn Level Two of Block One’s floor,\nI’m right outside — can’t miss the door!" }, // Blk 1 Level 2 Outside the elevator beside 711
+  { x: 1360, y: -497, clue: "Where ink meets page,\nStep beyond, where you are sought.\nThe spot you seek is calm, not loud —\nRight outside, beyond the crowd." }, // Space outside JCS@West
+  { x: 1772, y: -515, clue: "Half a dozen steps and you’ll arrive,\nWhere future hosts learn to welcome and drive.\nA lobby’s name with sky in view\nA training ground for hospitality crew." }, // Sky Lobby
+  { x: 1830, y: -677, clue: "Around the Piazza above lies a bridge on the fourth level.\nUp the escalator you go and you might find me there." }, // Level 4 walkaway the curve around piazza
+  { x: 1752, y: -841, clue: "1. I am located at where imagination are created. Hint: Trains are Too Technological (fictional)\n2. I am located at the section where it is popular in japan. Hint: What is the letter to describe yourself. (Manga)\n3. I am located at the national language of Singapore. Hint: I come at the end of note, page & theme. What letter am I? (Malay)" }, // Library
+  { x: 1342, y: -659, clue: "On level four we proudly stand,\nA wall of colors, tech in hand.\nFaces and wires, stories untold\nWhich mural’s magic do we behold" }, // School of Info-Comn and Technology Mural
+  { x: 1648, y: -595, clue: "Down at level two they stay,\nHuman forms in a frozen play.\nNo words they speak, yet stories show\nWhat figures stand where breezes blow?" }, // Piazza
+  { x: 1360, y: -497, clue: "On level three in Block One’s space,\nA shop for uniforms and pens you’ll trace.\nFrom notes to shirts, they’ve got the best\nWhat place equips all students?" }, // JCS @ West
+  { x: 1126, y: -681, clue: "Where hearts race fast and muscles grow,\nOn level two, Block Six, you’ll know.\nA place for power, strength, and vim\nCan you guess?" }, // Gym
+  { x: 1742, y: -851, clue: "Near shelves of knowledge, take a rest,\nOn level five, your thirst is blessed.\nSweet pearls dance in every cup\nCan you guess?" }, // Each 'a' Cup
+  { x: 1692, y: -521, clue: "Need some help or a friendly guide?\nOn level two, Block Two inside.\nQuestions answered with care so true\nWhat centre waits to welcome you?" }  // Outside customer visitor centre
 ];
 
 // Shuffle locations every new game
