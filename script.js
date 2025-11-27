@@ -84,7 +84,7 @@ locations.forEach((loc, index) => {
 
 let currentStage = 0;
 let unlockedStage = 1;
-const TOTAL_STAGES_NEEDED = 2;          // ← Win after completing any 5 stations
+const TOTAL_STAGES_NEEDED = 6;          // ← Win after completing any 6 stations
 let team = '';
 let className = '';
 const markers = [];
