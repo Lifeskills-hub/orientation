@@ -63,11 +63,11 @@ const locations = [
   { x: 1336, y: -468, clue: "Space outside JCS@West\n\nWelcome to the Word Scramble Relay!" },
   { x: 1792, y: -492, clue: "Level 7 Open Space outside Auditorium (Above Sky Lobby)\n\nWelcome to Spot the Difference!" },
   { x: 1804, y: -664, clue: "Level 4 walkaway the curve around piazza\n\nWelcome to Lost in Translation" },
-  { x: 1360, y: -828, clue: "(Unmanned Station)\n\nSchool of Info-Comn and Technology Mural\n\nTake a Group Photo at the specific place" },
-  { x: 1612, y: -764, clue: "(Unmanned Station)\n\nPiazza\n\nTake a group Photo and post with the figures" },
-  { x: 1422, y: -670, clue: "(Unmanned Station)\n\nJCS @ West\n\nTake a group photo outside with JCS as background" },
+  { x: 1360, y: -646, clue: "(Unmanned Station)\n\nSchool of Info-Comn and Technology Mural\n\nTake a Group Photo at the specific place" },
+  { x: 1654, y: -586, clue: "(Unmanned Station)\n\nPiazza\n\nTake a group Photo and post with the figures" },
+  { x: 1422, y: -502, clue: "(Unmanned Station)\n\nJCS @ West\n\nTake a group photo outside with JCS as background" },
   { x: 924, y: -672, clue: "(Unmanned Station)\n\nGym\n\nTake a group photo with everyone flexing" },
-  { x: 1782, y: -846, clue: "(Unmanned Station)\n\nEach 'a' Cup\n\nTake a group photo with everyone posing to drink" },
+  { x: 1764, y: -802, clue: "(Unmanned Station)\n\nEach 'a' Cup\n\nTake a group photo with everyone posing to drink" },
   { x: 1692, y: -514, clue: "(Unmanned Station)\n\nOutside customer visitor centre\n\nTake a group photo with everyone" }
 ];
 
