@@ -45,7 +45,7 @@ const bounds = [[0, 0], [imageHeight, imageWidth]];
 L.imageOverlay('ite.png', bounds).addTo(map);
 map.fitBounds(bounds);
 
-// ==================== YOUR 23 CUSTOM STAGES ====================
+// ==================== YOUR 22 CUSTOM STAGES ====================
 const locations = [
   { x: 1546, y: -738, clue: "Blk 4 Level 4 - Outside LFS Staff Room\n\nWelcome to Reverse Charades!" },
   { x: 1774, y: -828, clue: "Outside library Blk 3 Lvl 5\n\nThe Landmark Matching Game!" },
