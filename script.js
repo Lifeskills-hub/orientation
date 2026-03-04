@@ -290,11 +290,15 @@ function resetGame() {
   location.reload();
 }
 
-map.on('click', function (e) {
-  const point = map.project(e.latlng, 0);
-  console.log(`Clicked Pixel Coordinates: x=${Math.round(point.x)}, y=${Math.round(point.y)}`);
-  alert(`Pixel Coordinates: x=${Math.round(point.x)}, y=${Math.round(point.y)}`);
-});
+// ────────────────────────────────────────────────
+// DEVELOPMENT / COORDINATE FINDER (commented out)
+// Used during setup to discover x,y coordinates
+// ────────────────────────────────────────────────
+// map.on('click', function (e) {
+//   const point = map.project(e.latlng, 0);
+//   console.log(`Clicked Pixel Coordinates: x=${Math.round(point.x)}, y=${Math.round(point.y)}`);
+//   alert(`Pixel Coordinates: x=${Math.round(point.x)}, y=${Math.round(point.y)}`);
+// });
 
 document.getElementById('media-upload').addEventListener('change', function () {
   const submitBtn = this.nextElementSibling;
