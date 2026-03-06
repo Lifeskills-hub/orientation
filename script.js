@@ -55,7 +55,7 @@ const locations = [
   { x: 1618, y: -532, clue: "Blk 1 lvl 2 the empty space beside the customer & visitor center (beside the escalator)\n\nStick Shift Circle Challenge" },
   { x: 1328, y: -500, clue: "Fitness@West (Blk 1 lvl 1)\n\nWelcome to the Circle Topic Challenge!" },
   { x: 1366, y: -522, clue: "Open space infront of Experienced ITE Centre (Level 4 - Above the level 3 canteen)\n\nWelcome to the Blindfold Drawing Challenge!" },
-  { x: 1766, y: -524, clue: "PULSE (Blk 2 Lvl 2)\n\nWelcome to the Traditional Games Challenge!" },
+  { x: 1766, y: -524, clue: "Visume Lab (Blk 3 Level 4)\n\nWelcome to the Traditional Games Challenge!" },
   { x: 1728, y: -502, clue: "Blk 1 Level 5 -Black Box\n\nWelcome to the Alphabet Chain Challenge! " },
   { x: 1800, y: -878, clue: "Flair studio\n\nWelcome to the Winning Word Challenge! " },
   { x: 1358, y: -604, clue: "Circular plant area between Blk 5 and Blk 1\n\nThe Whisper Challenge!" },
