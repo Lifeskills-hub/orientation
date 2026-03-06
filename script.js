@@ -57,7 +57,7 @@ const locations = [
   { x: 1366, y: -522, clue: "Open space infront of Experienced ITE Centre (Level 4 - Above the level 3 canteen)\n\nWelcome to the Blindfold Drawing Challenge!" },
   { x: 1766, y: -524, clue: "Visume Lab (Blk 3 Level 4)\n\nWelcome to the Traditional Games Challenge!" },
   { x: 1728, y: -502, clue: "Blk 1 Level 5 -Black Box\n\nWelcome to the Alphabet Chain Challenge! " },
-  { x: 1800, y: -878, clue: "Flair studio\n\nWelcome to the Winning Word Challenge! " },
+  { x: 1800, y: -878, clue: "Flair studio (blk 3 Level 4)\n\nWelcome to the Winning Word Challenge! " },
   { x: 1358, y: -604, clue: "Circular plant area between Blk 5 and Blk 1\n\nThe Whisper Challenge!" },
   { x: 946, y: -660, clue: "Open space in front of Staff Gym (Level 4)\n\nWelcome to the Whisper Challenge! " },
   { x: 1336, y: -468, clue: "Space outside JCS@West\n\nWelcome to the Word Scramble Relay!" },
