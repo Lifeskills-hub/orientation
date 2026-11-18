@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#a71930">
+  <title>Lifeskills Orientation Adventure</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <div id="team-form-overlay" class="overlay onboarding-overlay" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+    <section id="team-form" class="panel onboarding-card">
+      <div class="brand-mark" aria-hidden="true">🧭</div>
+      <p class="eyebrow">ITE College West</p>
+      <h1 id="welcome-title">Lifeskills Orientation</h1>
+      <p class="intro">Explore the campus, complete team challenges and collect 11 mission stamps.</p>
+
+      <div class="form-grid">
+        <label for="team-name">Team name</label>
+        <input type="text" id="team-name" maxlength="40" autocomplete="organization" placeholder="e.g. Team Phoenix" required>
+        <label for="team-class">Class</label>
+        <input type="text" id="team-class" maxlength="30" autocomplete="off" placeholder="e.g. CW2601A" required>
+      </div>
+      <p id="form-error" class="form-error" role="alert"></p>
+      <button id="start-game-btn" class="btn btn-primary btn-wide" type="button">Start adventure <span aria-hidden="true">→</span></button>
+
+      <div class="essentials">
+        <h2>Before you begin</h2>
+        <ul>
+          <li><span>📍</span><div><strong>Find hotspots</strong><small>Follow the active marker on the campus map.</small></div></li>
+          <li><span>🤝</span><div><strong>Complete together</strong><small>Use teamwork, problem-solving and communication.</small></div></li>
+          <li><span>📷</span><div><strong>Upload evidence</strong><small>Submit a photo or video before completing a mission.</small></div></li>
+          <li><span>✅</span><div><strong>Get verified</strong><small>Facilitators verify the tasks at the end.</small></div></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <header class="app-header">
+    <div class="title-wrap">
+      <div class="app-icon" aria-hidden="true">🧭</div>
+      <div><p class="eyebrow">Orientation Adventure</p><h1>Lifeskills Orientation</h1></div>
+    </div>
+    <button id="help-btn" class="icon-btn" type="button" aria-label="Show game guide" title="Game guide">?</button>
+  </header>
+
+  <main class="game-shell">
+    <section class="mission-dashboard" aria-label="Game progress">
+      <div class="team-summary">
+        <div class="avatar" aria-hidden="true">👥</div>
+        <div><span class="label">Playing as</span><strong id="team-display">Your Team</strong><small id="class-display">Class</small></div>
+      </div>
+      <div class="progress-summary">
+        <div class="progress-copy"><span>Mission progress</span><strong id="progress-text">0 / 11</strong></div>
+        <div class="progress-track" role="progressbar" aria-label="Mission progress" aria-valuemin="0" aria-valuemax="11" aria-valuenow="0"><span id="progress-bar"></span></div>
+      </div>
+      <div class="timer-summary" aria-label="Game timer">
+        <span class="timer-label">⏱ Time remaining</span>
+        <strong id="game-timer">02:00:00</strong>
+        <small id="timer-note">Timer starts when your adventure begins.</small>
+      </div>
+      <div class="status-chip"><span class="pulse-dot"></span><span id="status-text">Find Mission 1</span></div>
+    </section>
+
+    <section class="map-card">
+      <div class="map-toolbar">
+        <div><span class="section-kicker">Campus map</span><h2>Find your next mission</h2></div>
+        <button id="reset-view-btn" class="btn btn-secondary btn-compact" type="button">⌖ Reset map</button>
+      </div>
+      <div id="map" aria-label="Interactive ITE College West orientation map"></div>
+      <div class="map-hint"><span class="marker-mini">●</span> Tap the red mission marker to view your challenge</div>
+    </section>
+
+    <aside class="side-panel">
+      <section class="next-mission-card">
+        <span class="section-kicker">Current objective</span>
+        <div class="mission-number"><span>Mission</span><strong id="current-mission-number">01</strong></div>
+        <p>Locate the active marker, meet your facilitator and complete the activity together.</p>
+        <button id="focus-marker-btn" class="btn btn-primary btn-wide" type="button">Show active marker</button>
+      </section>
+      <section id="scoreboard" class="activity-card">
+        <div class="card-heading"><div><span class="section-kicker">Team journey</span><h2>Completed missions</h2></div><span id="score-count" class="count-badge">0</span></div>
+        <ul id="score-list" class="activity-list"></ul>
+        <p id="empty-score" class="empty-state">Your completed missions will appear here.</p>
+      </section>
+    </aside>
+  </main>
+
+  <nav class="bottom-actions" aria-label="Game actions">
+    <button id="recall-certificate-btn" class="btn btn-light" type="button" onclick="showCertificate()" disabled>🏆 Certificate</button>
+    <button id="restart-btn" class="btn btn-danger-ghost" type="button" onclick="resetGame()">↻ Restart</button>
+  </nav>
+
+  <div id="clue-overlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="clue-title">
+    <section id="clue-box" class="panel mission-modal">
+      <button id="close-clue-btn" class="close-btn" type="button" onclick="closeClue()" aria-label="Close mission">×</button>
+      <div class="mission-flag">ACTIVE MISSION</div>
+      <div class="mission-icon" aria-hidden="true">📍</div>
+      <h2 id="clue-title">Mission</h2>
+      <p id="clue-text">Clue will appear here</p>
+      <div class="upload-area">
+        <label class="upload-drop" for="media-upload">
+          <span class="upload-icon" aria-hidden="true">📷</span>
+          <strong id="upload-label">Add photo or video</strong>
+          <small id="file-name">Tap to choose evidence from this device</small>
+          <input type="file" id="media-upload" accept="image/*,video/*">
+        </label>
+        <div id="evidence-preview" class="evidence-preview" aria-live="polite">
+          <img id="image-preview" alt="Selected evidence preview">
+          <video id="video-preview" controls playsinline></video>
+          <div class="preview-meta"><span id="preview-type">Evidence selected</span><button id="change-evidence-btn" class="preview-change" type="button">Change</button></div>
+        </div>
+        <button id="upload-btn" class="btn btn-secondary btn-wide" type="button" onclick="uploadToDrive()" disabled>Upload evidence</button>
+        <div id="upload-success" class="success-note" aria-live="polite">✓ Evidence uploaded. You can complete this mission.</div>
+      </div>
+      <button id="complete-level-btn" class="btn btn-primary btn-wide" type="button" onclick="completeStage()" disabled>Complete mission</button>
+    </section>
+  </div>
+
+  <div id="certificate-overlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="certificate-title">
+    <section id="certificate" class="panel certificate-card">
+      <div class="trophy" aria-hidden="true">🏆</div>
+      <p class="eyebrow">Mission accomplished</p>
+      <h2 id="certificate-title">Congratulations!</h2>
+      <p>Team <strong id="certificate-team"></strong> from <strong id="certificate-class"></strong> successfully completed the Lifeskills Orientation Adventure.</p>
+      <div class="certificate-stamp">11 MISSIONS<br><span>COMPLETED</span></div>
+      <p class="certificate-date">Completed on <span id="certificate-date"></span></p>
+      <button class="btn btn-primary btn-wide" type="button" onclick="closeCertificate()">Back to map</button>
+    </section>
+  </div>
+
+  <div id="guide-overlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="guide-title">
+    <section class="panel guide-card">
+      <button id="close-guide-btn" class="close-btn" type="button" aria-label="Close guide">×</button>
+      <div class="mission-icon" aria-hidden="true">🧭</div><h2 id="guide-title">How to play</h2>
+      <ol><li>Find the only active red marker.</li><li>Complete the station activity as a team.</li><li>Upload a photo or video as evidence.</li><li>Complete the mission to unlock the next random station.</li><li>Keep an eye on the 2-hour game timer. At zero, return to the meeting point.</li><li>Finish any 11 missions to earn your certificate.</li></ol>
+    </section>
+  </div>
+
+  <div id="timeup-overlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="timeup-title">
+    <section class="panel timeup-card">
+      <div class="mission-icon" aria-hidden="true">⏰</div>
+      <p class="eyebrow">Time's up</p>
+      <h2 id="timeup-title">Orientation time has ended</h2>
+      <p>Please return to the meeting point and report to your facilitator. Your current progress remains saved on this device.</p>
+      <button id="close-timeup-btn" class="btn btn-primary btn-wide" type="button">OK, return to map</button>
+    </section>
+  </div>
+
+  <div id="success-toast" class="toast" role="status" aria-live="polite"><span>🎉</span><div><strong>Mission complete!</strong><small id="toast-message">The next mission is now unlocked.</small></div></div>
+
+  <div id="loading-overlay" class="overlay loading-screen" role="status" aria-live="polite">
+    <div class="spinner"></div><strong>Uploading evidence…</strong><span>Please keep this page open.</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
