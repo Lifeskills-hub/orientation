@@ -1,0 +1,75 @@
+/* Lifeskills Orientation mobile tap reliability hotfix */
+
+/* The hidden completion toast must never intercept taps on buttons underneath. */
+.toast {
+  pointer-events: none !important;
+}
+
+/* Keep mobile dialogs inside the real visible browser viewport. */
+#clue-box,
+#certificate,
+.guide-card,
+.timeup-card {
+  max-height: calc(100dvh - 16px) !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: calc(28px + env(safe-area-inset-bottom)) !important;
+}
+
+/* Ensure actionable controls receive taps immediately. */
+#upload-btn,
+#complete-level-btn,
+#recall-certificate-btn,
+#restart-btn,
+#certificate button,
+#close-clue-btn {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto !important;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#upload-btn,
+#complete-level-btn {
+  min-height: 52px;
+}
+
+/* Keep fixed game controls above Leaflet, but below an open dialog. */
+.bottom-actions {
+  z-index: 1050 !important;
+  padding-bottom: env(safe-area-inset-bottom);
+  pointer-events: none;
+}
+.bottom-actions button {
+  pointer-events: auto !important;
+  min-height: 48px;
+  touch-action: manipulation;
+}
+
+/* A genuinely hidden overlay cannot capture a tap. */
+.overlay[style*="display: none"] {
+  pointer-events: none !important;
+}
+
+@media (max-width: 600px) {
+  #clue-overlay,
+  #certificate-overlay,
+  #guide-overlay,
+  #timeup-overlay {
+    align-items: flex-end !important;
+    padding: 8px 8px calc(8px + env(safe-area-inset-bottom)) !important;
+  }
+  #clue-box,
+  #certificate,
+  .guide-card,
+  .timeup-card {
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 22px 22px 14px 14px !important;
+  }
+  .upload-area {
+    margin-bottom: 14px !important;
+  }
+}
