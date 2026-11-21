@@ -23,7 +23,7 @@ const originalLocations = [
   { x:946,y:-660,clue:"Open space in front of Staff Gym (Level 4)\n\nWelcome to the Whisper Challenge!", hint:"Go to Level 4 and look for the open area in front of the Staff Gym." },
   { x:1792,y:-492,clue:"Level 7 open space outside Auditorium (above Sky Lobby)\n\nWelcome to Spot the Difference!", hint:"Head high up to Level 7. Look for the open space outside the Auditorium, above Sky Lobby." },
   { x:1804,y:-664,clue:"Level 4 walkway around the curve at Piazza\n\nWelcome to Lost in Translation!", hint:"Go to Level 4 around Piazza and follow the curved walkway." },
-  { x:1360,y:-646,clue:"(Unmanned Station)\n\nSchool of Info-Comm and Technology Mural\n\nTake a group photo at the specified place.", hint:"This is unmanned. Look for the School of Info-Comm and Technology mural." },
+  { x:1360,y:-646,clue:"(Unmanned Station)\n\nSchool of Info-Comm and Technology Mural\n\nTake a group photo with the wall Mural.", hint:"This is unmanned. Look for the School of Info-Comm and Technology mural." },
   { x:1654,y:-586,clue:"(Unmanned Station)\n\nPiazza\n\nTake a group photo and pose with the figures.", hint:"This is unmanned. Head to Piazza and look for the figures." },
   { x:1422,y:-502,clue:"(Unmanned Station)\n\nFoogle Cafeteria\n\nTake a group photo with the Foodgle Signboard as the background.", hint:"This is unmanned. Find Foodgle and go in." },
   { x:924,y:-672,clue:"(Unmanned Station)\n\nGym\n\nTake a group photo with everyone flexing.", hint:"This is unmanned. Find the Gym and prepare your best flex pose." },
