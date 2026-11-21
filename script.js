@@ -21,12 +21,11 @@ const originalLocations = [
   { x:1800,y:-878,clue:"Flair Studio (Blk 3 Level 4)\n\nWelcome to the Winning Word Challenge!", hint:"Head to Block 3, Level 4 and look for the Flair Studio." },
   { x:1358,y:-604,clue:"Circular plant area between Blk 5 and Blk 1\n\nThe Whisper Challenge!", hint:"Look for the circular planted area connecting Block 5 and Block 1." },
   { x:946,y:-660,clue:"Open space in front of Staff Gym (Level 4)\n\nWelcome to the Whisper Challenge!", hint:"Go to Level 4 and look for the open area in front of the Staff Gym." },
-  { x:1336,y:-468,clue:"(Unmanned Station)\n\nFoodgle Cafeteria\n\nWelcome to Foodgle!", hint:"Look for Foodgle Signboard and take a group photo with it." },
   { x:1792,y:-492,clue:"Level 7 open space outside Auditorium (above Sky Lobby)\n\nWelcome to Spot the Difference!", hint:"Head high up to Level 7. Look for the open space outside the Auditorium, above Sky Lobby." },
   { x:1804,y:-664,clue:"Level 4 walkway around the curve at Piazza\n\nWelcome to Lost in Translation!", hint:"Go to Level 4 around Piazza and follow the curved walkway." },
   { x:1360,y:-646,clue:"(Unmanned Station)\n\nSchool of Info-Comm and Technology Mural\n\nTake a group photo at the specified place.", hint:"This is unmanned. Look for the School of Info-Comm and Technology mural." },
   { x:1654,y:-586,clue:"(Unmanned Station)\n\nPiazza\n\nTake a group photo and pose with the figures.", hint:"This is unmanned. Head to Piazza and look for the figures." },
-  { x:1422,y:-502,clue:"(Unmanned Station)\n\nJCS@West\n\nTake a group photo outside with JCS as the background.", hint:"This is unmanned. Find JCS@West and stay outside the entrance." },
+  { x:1422,y:-502,clue:"(Unmanned Station)\n\nFoogle Cafeteria\n\nTake a group photo with the Foodgle Signboard as the background.", hint:"This is unmanned. Find Foodgle and go in." },
   { x:924,y:-672,clue:"(Unmanned Station)\n\nGym\n\nTake a group photo with everyone flexing.", hint:"This is unmanned. Find the Gym and prepare your best flex pose." },
   { x:1764,y:-802,clue:"(Unmanned Station)\n\nEach 'a' Cup\n\nTake a group photo with everyone posing to drink.", hint:"This is unmanned. Find Each 'a' Cup and get the team ready for a drinking pose." },
   { x:1692,y:-514,clue:"(Unmanned Station)\n\nOutside Customer Visitor Centre\n\nTake a group photo with everyone.", hint:"This is unmanned. Find the Customer Visitor Centre and stay outside it." }
