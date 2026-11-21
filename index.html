@@ -102,15 +102,12 @@
       <div class="mission-icon" aria-hidden="true">📍</div>
       <h2 id="clue-title">Mission</h2>
       <p id="clue-text">Clue will appear here</p>
-
-<button id="hint-btn" class="btn btn-hint btn-wide" type="button">
-  💡 Need a hint?
-</button>
-
-<div id="hint-box" class="hint-box" aria-live="polite">
-  Hint will appear here.
-</div>
-      
+      <button id="hint-btn" class="btn btn-hint btn-wide" type="button" aria-expanded="false" aria-controls="hint-box">
+        💡 Need a hint?
+      </button>
+      <div id="hint-box" class="hint-box" aria-live="polite">
+        Hint will appear here.
+      </div>
       <div class="upload-area">
         <label class="upload-drop" for="media-upload">
           <span class="upload-icon" aria-hidden="true">📷</span>
