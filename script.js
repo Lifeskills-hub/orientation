@@ -51,7 +51,7 @@ L.imageOverlay('ite.png',bounds).addTo(map);
 map.fitBounds(bounds);
 
 const markerIcon=L.divIcon({className:'custom-marker',html:'<div class="marker-pin"><span>!</span></div>',iconSize:[42,48],iconAnchor:[21,45]});
-locations.forEach(loc=>{const marker=L.marker(map.unproject([loc.x,loc.y],0),{icon:markerIcon,title:`Mission ${loc.stage}`});marker.on('click',()=>startStage(loc.stage,loc.clue));markers.push(marker);});
+locations.forEach(loc=>{const marker=L.marker(map.unproject([loc.x,loc.y],0),{icon:markerIcon,title:`Mission ${loc.stage}`});marker.on('click',()=>startStage(loc.stage,loc.clue,loc.hint));markers.push(marker);});
 
 function completedCount(){return Math.min(unlockedStage-1,TOTAL_STAGES_NEEDED);}
 function activeMarker(){return markers[unlockedStage-1];}
@@ -84,10 +84,18 @@ function submitTeamDetails(){
   if(!team||!className){error.textContent='Please enter both your team name and class.';return;}
   error.textContent='';localStorage.setItem(STORAGE.team,team);localStorage.setItem(STORAGE.className,className);if(!localStorage.getItem(STORAGE.startTime)){localStorage.setItem(STORAGE.startTime,String(Date.now()));localStorage.removeItem(STORAGE.timeUpShown);}document.getElementById('team-form-overlay').style.display='none';updateDashboard();startTimer();setTimeout(focusActiveMarker,250);
 }
-function startStage(stage,clue){
+function startStage(stage,clue,hint){
   if(stage!==unlockedStage){alert('This mission is not active yet.');return;}
   currentStage=stage;localStorage.setItem(STORAGE.currentStage,String(currentStage));
-  document.getElementById('clue-title').textContent=`Mission ${stage}`;document.getElementById('clue-text').textContent=clue;document.getElementById('clue-overlay').style.display='flex';
+  document.getElementById('clue-title').textContent=`Mission ${stage}`;
+  document.getElementById('clue-text').textContent=clue;
+  const hintBtn=document.getElementById('hint-btn');
+  const hintBox=document.getElementById('hint-box');
+  hintBox.textContent=hint||'No additional hint is available for this mission.';
+  hintBox.classList.remove('show');
+  hintBtn.textContent='💡 Need a hint?';
+  hintBtn.setAttribute('aria-expanded','false');
+  document.getElementById('clue-overlay').style.display='flex';
   document.getElementById('complete-level-btn').disabled=true;document.getElementById('upload-btn').disabled=true;document.getElementById('upload-success').style.display='none';document.getElementById('media-upload').value='';clearEvidencePreview();document.getElementById('file-name').textContent='Tap to choose evidence from this device';
 }
 async function uploadToDrive(){
@@ -149,6 +157,13 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('team-name').value=team;document.getElementById('team-class').value=className;
   document.getElementById('team-form-overlay').style.display=team&&className?'none':'flex';
   document.getElementById('start-game-btn').addEventListener('click',submitTeamDetails);
+  const hintBtn=document.getElementById('hint-btn');
+  const hintBox=document.getElementById('hint-box');
+  hintBtn.addEventListener('click',()=>{
+    const isShowing=hintBox.classList.toggle('show');
+    hintBtn.textContent=isShowing?'💡 Hide hint':'💡 Need a hint?';
+    hintBtn.setAttribute('aria-expanded',isShowing?'true':'false');
+  });
   ['team-name','team-class'].forEach(id=>document.getElementById(id).addEventListener('keydown',e=>{if(e.key==='Enter')submitTeamDetails();}));
   document.getElementById('media-upload').addEventListener('change',function(){const file=this.files[0];document.getElementById('upload-btn').disabled=!file;document.getElementById('file-name').textContent=file?file.name:'Tap to choose evidence from this device';document.getElementById('upload-success').style.display='none';document.getElementById('complete-level-btn').disabled=true;previewEvidence(file);});document.getElementById('change-evidence-btn').addEventListener('click',()=>document.getElementById('media-upload').click());
   document.getElementById('close-timeup-btn').addEventListener('click',()=>document.getElementById('timeup-overlay').style.display='none');
