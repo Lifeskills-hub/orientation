@@ -7,29 +7,137 @@ const imageHeight = 1314;
 const bounds = [[0, 0], [imageHeight, imageWidth]];
 const STORAGE = { team:'team', className:'className', currentStage:'currentStage', unlockedStage:'unlockedStage', scoreboard:'scoreboard', order:'locationOrder', startTime:'gameStartTime', timeUpShown:'gameTimeUpShown' };
 
+
 const originalLocations = [
-  { x:1546,y:-738,clue:"Blk 4 Level 4 - Outside LFS Staff Room\n\nWelcome to Reverse Charades!", hint:"Head to Block 4 and go up to Level 4. Look near the Lifeskills staff area." },
-  { x:1774,y:-828,clue:"Outside library Blk 3 Lvl 5\n\nThe Landmark Matching Game!", hint:"Think books and study spaces. Head to Block 3, Level 5." },
-  { x:872,y:-708,clue:"Sports Hall Blk 7 Lvl 2\n\nWelcome to the Ping Pong Trivia Challenge!", hint:"Look for the indoor sports venue in Block 7 on Level 2." },
-  { x:1342,y:-666,clue:"Beside SAC room Blk 5 lvl 4\n\nCountry Match Challenge", hint:"Head to Block 5, Level 4. Look around the SAC room." },
-  { x:966,y:-676,clue:"Outside gym\n\nChopstick Cuisine Relay Challenge", hint:"Look for the gym area. The station is outside it." },
-  { x:1618,y:-532,clue:"Blk 1 lvl 2, empty space beside the Customer & Visitor Centre (beside the escalator)\n\nStick Shift Circle Challenge", hint:"Go to Block 1, Level 2. Look near the Customer & Visitor Centre and escalator." },
-  { x:1328,y:-500,clue:"Fitness@West (Blk 1 lvl 1)\n\nWelcome to the Circle Topic Challenge!", hint:"Go to Block 1, Level 1 and look for Fitness@West." },
-  { x:1366,y:-522,clue:"Open space in front of Experience ITE Centre (Level 4, above the Level 3 canteen)\n\nWelcome to the Blindfold Drawing Challenge!", hint:"Go above the Level 3 canteen. Look for the open space near Experience ITE Centre." },
-  { x:1766,y:-524,clue:"Visume Lab (Blk 3 Level 4)\n\nWelcome to the Traditional Games Challenge!", hint:"Head to Block 3, Level 4 and look for the Visume Lab." },
-  { x:1728,y:-502,clue:"Blk 1 Level 5 - Black Box\n\nWelcome to the Alphabet Chain Challenge!", hint:"Go to Block 1, Level 5 and look for the Black Box." },
-  { x:1800,y:-878,clue:"Flair Studio (Blk 3 Level 4)\n\nWelcome to the Winning Word Challenge!", hint:"Head to Block 3, Level 4 and look for the Flair Studio." },
-  { x:1358,y:-604,clue:"Circular plant area between Blk 5 and Blk 1\n\nThe Whisper Challenge!", hint:"Look for the circular planted area connecting Block 5 and Block 1." },
-  { x:946,y:-660,clue:"Open space in front of Staff Gym (Level 4)\n\nWelcome to the Whisper Challenge!", hint:"Go to Level 4 and look for the open area in front of the Staff Gym." },
-  { x:1792,y:-492,clue:"Level 7 open space outside Auditorium (above Sky Lobby)\n\nWelcome to Spot the Difference!", hint:"Head high up to Level 7. Look for the open space outside the Auditorium, above Sky Lobby." },
-  { x:1804,y:-664,clue:"Level 4 walkway around the curve at Piazza\n\nWelcome to Lost in Translation!", hint:"Go to Level 4 around Piazza and follow the curved walkway." },
-  { x:1360,y:-646,clue:"(Unmanned Station)\n\nSchool of Info-Comm and Technology Mural\n\nTake a group photo with the wall Mural.", hint:"This is unmanned. Look for the School of Info-Comm and Technology mural." },
-  { x:1654,y:-586,clue:"(Unmanned Station)\n\nPiazza\n\nTake a group photo and pose with the figures.", hint:"This is unmanned. Head to Piazza and look for the figures." },
-  { x:1422,y:-502,clue:"(Unmanned Station)\n\nFoogle Cafeteria\n\nTake a group photo with the Foodgle Signboard as the background.", hint:"This is unmanned. Find Foodgle and go in." },
-  { x:924,y:-672,clue:"(Unmanned Station)\n\nGym\n\nTake a group photo with everyone flexing.", hint:"This is unmanned. Find the Gym and prepare your best flex pose." },
-  { x:1764,y:-802,clue:"(Unmanned Station)\n\nEach 'a' Cup\n\nTake a group photo with everyone posing to drink.", hint:"This is unmanned. Find Each 'a' Cup and get the team ready for a drinking pose." },
-  { x:1692,y:-514,clue:"(Unmanned Station)\n\nOutside Customer Visitor Centre\n\nTake a group photo with everyone.", hint:"This is unmanned. Find the Customer Visitor Centre and stay outside it." }
+  {
+    x:1546,y:-738,
+    clue:"Blk 4 Level 4 - Outside LFS Staff Room\n\nReverse Charades: Communicate Without Words\n\nAttribute: Initiator\nSkill Focus: Communication & Empathy\nUnderstand your teammates' actions and perspectives while communicating clearly without speaking.",
+    hint:"Head to Block 4 and go up to Level 4. Look near the Lifeskills staff area."
+  },
+
+  {
+    x:1774,y:-828,
+    clue:"Outside library Blk 3 Lvl 5\n\nLandmark Detectives: Explore and Connect\n\nAttribute: Explorer\nSkill Focus: Curiosity & Independent Learning\nObserve carefully, investigate unfamiliar landmarks and use your own knowledge to make connections.",
+    hint:"Think books and study spaces. Head to Block 3, Level 5."
+  },
+
+  {
+    x:872,y:-708,
+    clue:"Sports Hall Blk 7 Lvl 2\n\nPing Pong Problem-Solvers\n\nAttribute: Tech-Savvy Creator\nSkill Focus: Critical Thinking & Problem Solving\nThink quickly, evaluate each question and work together to find the best answer under pressure.",
+    hint:"Look for the indoor sports venue in Block 7 on Level 2."
+  },
+
+  {
+    x:1342,y:-666,
+    clue:"Beside SAC room Blk 5 lvl 4\n\nGlobal Connections: Country Match\n\nAttribute: Explorer\nSkill Focus: Curiosity & Independent Learning\nDiscover different countries, cultures and identities through observation and active learning.",
+    hint:"Head to Block 5, Level 4. Look around the SAC room."
+  },
+
+  {
+    x:966,y:-676,
+    clue:"Outside gym\n\nChopstick Relay: Adapt and Achieve\n\nAttribute: Explorer\nSkill Focus: Adaptability & Resilience\nAdjust your technique, stay patient and keep trying when the task becomes difficult.",
+    hint:"Look for the gym area. The station is outside it."
+  },
+
+  {
+    x:1618,y:-532,
+    clue:"Blk 1 lvl 2, empty space beside the Customer & Visitor Centre (beside the escalator)\n\nStick Shift: One Team, One Goal\n\nAttribute: Initiator\nSkill Focus: Communication & Empathy\nListen to one another, coordinate your movements and help every team member contribute.",
+    hint:"Go to Block 1, Level 2. Look near the Customer & Visitor Centre and escalator."
+  },
+
+  {
+    x:1328,y:-500,
+    clue:"Fitness@West (Blk 1 lvl 1)\n\nCircle of Ideas: Speak, Listen, Connect\n\nAttribute: Initiator\nSkill Focus: Communication & Empathy\nExpress your ideas confidently while listening respectfully to different views.",
+    hint:"Go to Block 1, Level 1 and look for Fitness@West."
+  },
+
+  {
+    x:1366,y:-522,
+    clue:"Open space in front of Experience ITE Centre (Level 4, above the Level 3 canteen)\n\nBlindfold Drawing: Trust the Communicator\n\nAttribute: Initiator\nSkill Focus: Communication & Empathy\nGive clear instructions, listen carefully and consider what your teammate needs to complete the drawing.",
+    hint:"Go above the Level 3 canteen. Look for the open space near Experience ITE Centre."
+  },
+
+  {
+    x:1766,y:-524,
+    clue:"Visume Lab (Blk 3 Level 4)\n\nTraditional Games Discovery\n\nAttribute: Explorer\nSkill Focus: Curiosity & Independent Learning\nExplore how traditional games reflect different communities, histories and cultures.",
+    hint:"Head to Block 3, Level 4 and look for the Visume Lab."
+  },
+
+  {
+    x:1728,y:-502,
+    clue:"Blk 1 Level 5 - Black Box\n\nAlphabet Chain: Think Fast, Build Together\n\nAttribute: Tech-Savvy Creator\nSkill Focus: Critical Thinking & Problem Solving\nRecognise patterns, generate ideas quickly and build on your teammates' responses.",
+    hint:"Go to Block 1, Level 5 and look for the Black Box."
+  },
+
+  {
+    x:1800,y:-878,
+    clue:"Flair Studio (Blk 3 Level 4)\n\nWinning Words: Create the Solution\n\nAttribute: Tech-Savvy Creator\nSkill Focus: Critical Thinking & Problem Solving\nAnalyse the available information, test possible answers and create a solution as a team.",
+    hint:"Head to Block 3, Level 4 and look for the Flair Studio."
+  },
+
+  {
+    x:1358,y:-604,
+    clue:"Circular plant area between Blk 5 and Blk 1\n\nWhisper Challenge: Message Matters\n\nAttribute: Initiator\nSkill Focus: Communication & Empathy\nCommunicate clearly and recognise how messages can change when they are not conveyed accurately.",
+    hint:"Look for the circular planted area connecting Block 5 and Block 1."
+  },
+
+  {
+    x:946,y:-660,
+    clue:"Open space in front of Staff Gym (Level 4)\n\nWhisper Challenge: Listen with Care\n\nAttribute: Initiator\nSkill Focus: Personal Values & Professional Ethics\nPass the message honestly and accurately while demonstrating responsibility and respect for others.",
+    hint:"Go to Level 4 and look for the open area in front of the Staff Gym."
+  },
+
+  {
+    x:1792,y:-492,
+    clue:"Level 7 open space outside Auditorium (above Sky Lobby)\n\nSpot the Difference: Observe, Analyse, Solve\n\nAttribute: Tech-Savvy Creator\nSkill Focus: Critical Thinking & Problem Solving\nExamine details, compare information and use evidence to identify the differences.",
+    hint:"Head high up to Level 7. Look for the open space outside the Auditorium, above Sky Lobby."
+  },
+
+  {
+    x:1804,y:-664,
+    clue:"Level 4 walkway around the curve at Piazza\n\nLost in Translation: Bridge the Communication Gap\n\nAttribute: Explorer\nSkill Focus: Adaptability & Resilience\nAdapt the way you communicate, learn from misunderstandings and try alternative approaches.",
+    hint:"Go to Level 4 around Piazza and follow the curved walkway."
+  },
+
+  // UNMANNED STATIONS - unchanged
+  {
+    x:1360,y:-646,
+    clue:"(Unmanned Station)\n\nSchool of Info-Comm and Technology Mural\n\nTake a group photo with the wall Mural.",
+    hint:"This is unmanned. Look for the School of Info-Comm and Technology mural."
+  },
+
+  {
+    x:1654,y:-586,
+    clue:"(Unmanned Station)\n\nPiazza\n\nTake a group photo and pose with the figures.",
+    hint:"This is unmanned. Head to Piazza and look for the figures."
+  },
+
+  {
+    x:1422,y:-502,
+    clue:"(Unmanned Station)\n\nFoogle Cafeteria\n\nTake a group photo with the Foodgle Signboard as the background.",
+    hint:"This is unmanned. Find Foodgle and go in."
+  },
+
+  {
+    x:924,y:-672,
+    clue:"(Unmanned Station)\n\nGym\n\nTake a group photo with everyone flexing.",
+    hint:"This is unmanned. Find the Gym and prepare your best flex pose."
+  },
+
+  {
+    x:1764,y:-802,
+    clue:"(Unmanned Station)\n\nEach 'a' Cup\n\nTake a group photo with everyone posing to drink.",
+    hint:"This is unmanned. Find Each 'a' Cup and get the team ready for a drinking pose."
+  },
+
+  {
+    x:1692,y:-514,
+    clue:"(Unmanned Station)\n\nOutside Customer Visitor Centre\n\nTake a group photo with everyone.",
+    hint:"This is unmanned. Find the Customer Visitor Centre and stay outside it."
+  }
 ];
+
+
 
 function getOrderedLocations(){
   let order;
