@@ -101,7 +101,16 @@
       <div class="mission-flag">ACTIVE MISSION</div>
       <div class="mission-icon" aria-hidden="true">📍</div>
       <h2 id="clue-title">Mission</h2>
-      <p id="clue-text">Clue will appear here</p>
+      <div id="clue-text" class="clue-content">
+          <div id="clue-location" class="clue-location"></div>
+          <h3 id="clue-game-title" class="clue-game-title"></h3>
+          <div id="clue-attribute-block" class="clue-attribute-block">
+            <p><strong>Attribute:</strong> <span id="clue-attribute"></span></p>
+            <p><strong>Skill Focus:</strong> <span id="clue-skill"></span></p>
+          </div>
+          <p id="clue-description" class="clue-description"></p>
+          <p id="clue-task" class="clue-task"></p>
+        </div>
       <button id="hint-btn" class="btn btn-hint btn-wide" type="button" aria-expanded="false" aria-controls="hint-box">
         💡 Need a hint?
       </button>

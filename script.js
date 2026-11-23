@@ -196,7 +196,31 @@ function startStage(stage,clue,hint){
   if(stage!==unlockedStage){alert('This mission is not active yet.');return;}
   currentStage=stage;localStorage.setItem(STORAGE.currentStage,String(currentStage));
   document.getElementById('clue-title').textContent=`Mission ${stage}`;
-  document.getElementById('clue-text').textContent=clue;
+  const sections=String(clue||'').split(/\n\n+/).map(part=>part.trim()).filter(Boolean);
+  const locationEl=document.getElementById('clue-location');
+  const gameTitleEl=document.getElementById('clue-game-title');
+  const attributeBlock=document.getElementById('clue-attribute-block');
+  const attributeEl=document.getElementById('clue-attribute');
+  const skillEl=document.getElementById('clue-skill');
+  const descriptionEl=document.getElementById('clue-description');
+  const taskEl=document.getElementById('clue-task');
+  locationEl.textContent=sections[0]||'';
+  gameTitleEl.textContent=sections[1]||'';
+  attributeEl.textContent='';skillEl.textContent='';descriptionEl.textContent='';taskEl.textContent='';
+  attributeBlock.style.display='none';descriptionEl.style.display='none';taskEl.style.display='none';
+  const details=(sections[2]||'').split(/\n+/).map(line=>line.trim()).filter(Boolean);
+  const attributeLine=details.find(line=>line.startsWith('Attribute:'));
+  const skillLine=details.find(line=>line.startsWith('Skill Focus:'));
+  const descriptionLines=details.filter(line=>!line.startsWith('Attribute:')&&!line.startsWith('Skill Focus:'));
+  if(attributeLine||skillLine){
+    attributeEl.textContent=attributeLine?attributeLine.replace(/^Attribute:\s*/,''):'';
+    skillEl.textContent=skillLine?skillLine.replace(/^Skill Focus:\s*/,''):'';
+    attributeBlock.style.display='block';
+    if(descriptionLines.length){descriptionEl.textContent=descriptionLines.join(' ');descriptionEl.style.display='block';}
+  }else{
+    const remaining=sections.slice(2).join(' ');
+    if(remaining){taskEl.textContent=remaining;taskEl.style.display='block';}
+  }
   const hintBtn=document.getElementById('hint-btn');
   const hintBox=document.getElementById('hint-box');
   hintBox.textContent=hint||'No additional hint is available for this mission.';
